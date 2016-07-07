@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Order:</strong>
+  <%= @stagelevel.order %>
+</p>
+
+<p>
+  <strong>Ammount:</strong>
+  <%= @stagelevel.ammount %>
+</p>
+
+<p>
+  <strong>Rate:</strong>
+  <%= @stagelevel.rate %>
+</p>
+
+<%= link_to 'Edit', edit_stagelevel_path(@stagelevel) %> |
+<%= link_to 'Back', stagelevels_path %>

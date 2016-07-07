@@ -1,0 +1,25 @@
+<%= form_for(@memberlevel) do |f| %>
+  <% if @memberlevel.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@memberlevel.errors.count, "error") %> prohibited this memberlevel from being saved:</h2>
+
+      <ul>
+      <% @memberlevel.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :quota %><br>
+    <%= f.text_field :quota %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

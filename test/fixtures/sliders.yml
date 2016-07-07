@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  link: MyString
+  showstartdate: 2016-07-07 16:12:24
+  showenddate: 2016-07-07 16:12:24
+
+two:
+  link: MyString
+  showstartdate: 2016-07-07 16:12:24
+  showenddate: 2016-07-07 16:12:24

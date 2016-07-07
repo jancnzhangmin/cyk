@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Peos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Memberlevel</th>
+      <th>Name</th>
+      <th>Credit</th>
+      <th>Sex</th>
+      <th>Tel</th>
+      <th>Bankcard</th>
+      <th>Bankaccount</th>
+      <th>Contact</th>
+      <th>Contactsex</th>
+      <th>Contacttel</th>
+      <th>Businesslicense</th>
+      <th>Qrcode</th>
+      <th>Upid</th>
+      <th>Status</th>
+      <th>Wechat</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @peos.each do |peo| %>
+      <tr>
+        <td><%= peo.memberlevel_id %></td>
+        <td><%= peo.name %></td>
+        <td><%= peo.credit %></td>
+        <td><%= peo.sex %></td>
+        <td><%= peo.tel %></td>
+        <td><%= peo.bankcard %></td>
+        <td><%= peo.bankaccount %></td>
+        <td><%= peo.contact %></td>
+        <td><%= peo.contactsex %></td>
+        <td><%= peo.contacttel %></td>
+        <td><%= peo.businesslicense %></td>
+        <td><%= peo.qrcode %></td>
+        <td><%= peo.upid %></td>
+        <td><%= peo.status %></td>
+        <td><%= peo.wechat %></td>
+        <td><%= link_to 'Show', peo %></td>
+        <td><%= link_to 'Edit', edit_peo_path(peo) %></td>
+        <td><%= link_to 'Destroy', peo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Peo', new_peo_path %>

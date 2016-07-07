@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @memberlevel.name %>
+</p>
+
+<p>
+  <strong>Quota:</strong>
+  <%= @memberlevel.quota %>
+</p>
+
+<%= link_to 'Edit', edit_memberlevel_path(@memberlevel) %> |
+<%= link_to 'Back', memberlevels_path %>

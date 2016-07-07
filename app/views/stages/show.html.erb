@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Stagelevel:</strong>
+  <%= @stage.stagelevel_id %>
+</p>
+
+<p>
+  <strong>Stagedate:</strong>
+  <%= @stage.stagedate %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @stage.amount %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @stage.status %>
+</p>
+
+<%= link_to 'Edit', edit_stage_path(@stage) %> |
+<%= link_to 'Back', stages_path %>

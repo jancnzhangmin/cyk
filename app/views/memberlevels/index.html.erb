@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Memberlevels</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Quota</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @memberlevels.each do |memberlevel| %>
+      <tr>
+        <td><%= memberlevel.name %></td>
+        <td><%= memberlevel.quota %></td>
+        <td><%= link_to 'Show', memberlevel %></td>
+        <td><%= link_to 'Edit', edit_memberlevel_path(memberlevel) %></td>
+        <td><%= link_to 'Destroy', memberlevel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Memberlevel', new_memberlevel_path %>
