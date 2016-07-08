@@ -1,29 +1,43 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Listing Memberlevels</h1>
+<%= render 'left' %>
+<%= render 'top' %>
+<div class="col-lg-12">
+  <div class="ibox float-e-margins">
+    <div class="ibox-title">
+      <h5>会员等级列表</h5>
+    </div>
+    <div class="ibox-content">
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Quota</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+      <h1>会员等级</h1>
+      <table class="table table-hover table-bordered">
+        <thead>
+        <tr>
+          <th>会员名</th>
+          <th>会员等级</th>
+          <th colspan="2"></th>
+        </tr>
+        </thead>
 
-  <tbody>
-    <% @memberlevels.each do |memberlevel| %>
-      <tr>
-        <td><%= memberlevel.name %></td>
-        <td><%= memberlevel.quota %></td>
-        <td><%= link_to 'Show', memberlevel %></td>
-        <td><%= link_to 'Edit', edit_memberlevel_path(memberlevel) %></td>
-        <td><%= link_to 'Destroy', memberlevel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
-<br>
+        <tbody>
+        <% @memberlevels.each do |memberlevel| %>
+            <tr>
+              <td><%= memberlevel.name %></td>
+              <td><%= memberlevel.quota %></td>
+              <td><%= link_to '编辑', edit_memberlevel_path(memberlevel) %></td>
+              <td><%= link_to '删除', memberlevel, method: :delete, data: { confirm: '确定删除吗?' } %></td>
+            </tr>
+        <% end %>
+        </tbody>
 
-<%= link_to 'New Memberlevel', new_memberlevel_path %>
+      </table>
+
+      <br>
+
+      <%= link_to '新建会员等级', new_memberlevel_path  %>
+      <br>
+    </div>
+
+  </div>
+</div>
+

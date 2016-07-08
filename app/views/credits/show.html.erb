@@ -1,34 +1,36 @@
+<%= render 'left' %>
+<%= render 'top' %>
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>姓名:</strong>
   <%= @credit.name %>
 </p>
 
 <p>
-  <strong>Sex:</strong>
+  <strong>性别:</strong>
   <%= @credit.sex %>
 </p>
 
 <p>
-  <strong>Age:</strong>
+  <strong>年龄:</strong>
   <%= @credit.age %>
 </p>
 
 <p>
-  <strong>Placeoforigin:</strong>
+  <strong>籍贯:</strong>
   <%= @credit.placeoforigin %>
 </p>
 
 <p>
-  <strong>Upname:</strong>
+  <strong>征信人:</strong>
   <%= @credit.upname %>
 </p>
 
 <p>
-  <strong>Tel:</strong>
+  <strong>电话:</strong>
   <%= @credit.tel %>
 </p>
 
-<%= link_to 'Edit', edit_credit_path(@credit) %> |
-<%= link_to 'Back', credits_path %>
+<%= link_to '编辑征信人', edit_credit_path(@credit) %> |
+<%= link_to '返回', credits_path %>

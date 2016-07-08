@@ -1,77 +1,120 @@
-<%= form_for(@peo) do |f| %>
-  <% if @peo.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@peo.errors.count, "error") %> prohibited this peo from being saved:</h2>
 
-      <ul>
-      <% @peo.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<div class="ibox-content form-horizontal m-t">
+
+
+  <div class="form-group">
+    <%= form_for(@peo,:html => {:class=>'form-horizontal m-t',:multipart => true}) do |f| %>
+
+        <div class="form-group">
+          <label class="col-sm-3 control-label">会员等级：</label>
+          <div class="col-sm-6">
+            <%= f.text_field :memberlevel,class:"form-control" %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-3 control-label">会员名：</label>
+          <div class="col-sm-6">
+            <%= f.text_field :name,class:"form-control" %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-3 control-label">信用额度：</label>
+          <div class="col-sm-6">
+            <%= f.text_field :credit,class:"form-control" %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-3 control-label">性别：</label>
+          <div class="col-sm-6">
+            <%= f.text_field :sex,class:"form-control" %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-3 control-label">电话：</label>
+          <div class="col-sm-6">
+            <%= f.text_field :tel,class:"form-control" %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-3 control-label">银行卡：</label>
+          <div class="col-sm-6">
+            <%= f.text_field :bankcard,class:"form-control" %>
+          </div>
+        </div>
+
+
+        <div class="form-group">
+          <label class="col-sm-3 control-label">银行卡号：</label>
+          <div class="col-sm-6">
+            <%= f.text_field :bankaccount,class:"form-control" %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-3 control-label">紧急联系人：</label>
+          <div class="col-sm-6">
+            <%= f.text_field :contact,class:"form-control" %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-3 control-label">紧急联系人性别：</label>
+          <div class="col-sm-6">
+            <%= f.text_field :contactsex,class:"form-control" %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-3 control-label">紧急联系人电话：</label>
+          <div class="col-sm-6">
+            <%= f.text_field :contacttel,class:"form-control" %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-3 control-label">营业执照：</label>
+          <div class="col-sm-6">
+            <%= f.text_field :businesslicense,class:"form-control" %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-3 control-label">QR码：</label>
+          <div class="col-sm-6">
+            <%= f.text_field :qrcode,class:"form-control" %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-3 control-label">单据：</label>
+          <div class="col-sm-6">
+            <%= f.text_field :upid,class:"form-control" %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-3 control-label">状态：</label>
+          <div class="col-sm-6">
+            <%= f.text_field :status,class:"form-control" %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-3 control-label">微信：</label>
+          <div class="col-sm-6">
+            <%= f.text_field :wechat,class:"form-control" %>
+          </div>
+        </div>
+
+        <div class="actions">
+          <%= f.submit '确定',class: "btn btn-w-m btn-success mylink pull-right",'data-no-turbolink'=>true %>
+
+    <% end %>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :memberlevel_id %><br>
-    <%= f.number_field :memberlevel_id %>
   </div>
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :credit %><br>
-    <%= f.text_field :credit %>
-  </div>
-  <div class="field">
-    <%= f.label :sex %><br>
-    <%= f.number_field :sex %>
-  </div>
-  <div class="field">
-    <%= f.label :tel %><br>
-    <%= f.text_field :tel %>
-  </div>
-  <div class="field">
-    <%= f.label :bankcard %><br>
-    <%= f.text_field :bankcard %>
-  </div>
-  <div class="field">
-    <%= f.label :bankaccount %><br>
-    <%= f.text_field :bankaccount %>
-  </div>
-  <div class="field">
-    <%= f.label :contact %><br>
-    <%= f.text_field :contact %>
-  </div>
-  <div class="field">
-    <%= f.label :contactsex %><br>
-    <%= f.number_field :contactsex %>
-  </div>
-  <div class="field">
-    <%= f.label :contacttel %><br>
-    <%= f.text_field :contacttel %>
-  </div>
-  <div class="field">
-    <%= f.label :businesslicense %><br>
-    <%= f.text_field :businesslicense %>
-  </div>
-  <div class="field">
-    <%= f.label :qrcode %><br>
-    <%= f.text_field :qrcode %>
-  </div>
-  <div class="field">
-    <%= f.label :upid %><br>
-    <%= f.number_field :upid %>
-  </div>
-  <div class="field">
-    <%= f.label :status %><br>
-    <%= f.number_field :status %>
-  </div>
-  <div class="field">
-    <%= f.label :wechat %><br>
-    <%= f.text_field :wechat %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>

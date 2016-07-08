@@ -1,4 +1,5 @@
 class PeosController < ApplicationController
+  layout 'admin'
   before_action :set_peo, only: [:show, :edit, :update, :destroy]
 
   # GET /peos
@@ -28,7 +29,7 @@ class PeosController < ApplicationController
 
     respond_to do |format|
       if @peo.save
-        format.html { redirect_to @peo, notice: 'Peo was successfully created.' }
+        format.html { redirect_to @peo, notice: '成功创建会员.' }
         format.json { render :show, status: :created, location: @peo }
       else
         format.html { render :new }
@@ -42,7 +43,7 @@ class PeosController < ApplicationController
   def update
     respond_to do |format|
       if @peo.update(peo_params)
-        format.html { redirect_to @peo, notice: 'Peo was successfully updated.' }
+        format.html { redirect_to @peo, notice: '会员修改成功.' }
         format.json { render :show, status: :ok, location: @peo }
       else
         format.html { render :edit }
@@ -56,7 +57,7 @@ class PeosController < ApplicationController
   def destroy
     @peo.destroy
     respond_to do |format|
-      format.html { redirect_to peos_url, notice: 'Peo was successfully destroyed.' }
+      format.html { redirect_to peos_url, notice: '删除会员.' }
       format.json { head :no_content }
     end
   end

@@ -1,25 +1,31 @@
-<%= form_for(@creditdetail) do |f| %>
-  <% if @creditdetail.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@creditdetail.errors.count, "error") %> prohibited this creditdetail from being saved:</h2>
 
-      <ul>
-      <% @creditdetail.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-  <div class="field">
-    <%= f.label :amount %><br>
-    <%= f.text_field :amount %>
+
+<div class="ibox-content form-horizontal m-t">
+
+
+  <div class="form-group">
+    <%= form_for(@creditdetail,:html => {:class=>'form-horizontal m-t',:multipart => true}) do |f| %>
+
+        <div class="form-group">
+          <label class="col-sm-3 control-label">征信数量：</label>
+          <div class="col-sm-6">
+            <%= f.text_field :amount,class:"form-control" %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-3 control-label">征信日期：</label>
+          <div class="col-sm-6">
+            <%= f.text_field :amountdate,class:"form-control" %>
+          </div>
+        </div>
+
+        <div class="actions">
+          <%= f.submit '确定',class: "btn btn-w-m btn-success mylink pull-right",'data-no-turbolink'=>true %>
+
+        <% end %>
+        </div>
   </div>
-  <div class="field">
-    <%= f.label :amountdate %><br>
-    <%= f.datetime_select :amountdate %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>
+

@@ -1,4 +1,7 @@
+<%= render 'left' %>
+<%= render 'top' %>
 <p id="notice"><%= notice %></p>
+
 <div class="pages">
   <div class="page" data-page="home-another">
 <div class="page-content">
@@ -212,3 +215,83 @@
 </div>
 </div>
     </div>
+
+
+<p>
+  <strong>会员等级:</strong>
+  <%= @peo.memberlevel_id %>
+</p>
+
+<p>
+  <strong>会员名:</strong>
+  <%= @peo.name %>
+</p>
+
+<p>
+  <strong>信用额度:</strong>
+  <%= @peo.credit %>
+</p>
+
+<p>
+  <strong>性别:</strong>
+  <%= @peo.sex %>
+</p>
+
+<p>
+  <strong>电话:</strong>
+  <%= @peo.tel %>
+</p>
+
+<p>
+  <strong>银行卡:</strong>
+  <%= @peo.bankcard %>
+</p>
+
+<p>
+  <strong>银行卡号:</strong>
+  <%= @peo.bankaccount %>
+</p>
+
+<p>
+  <strong>紧急联系人:</strong>
+  <%= @peo.contact %>
+</p>
+
+<p>
+  <strong>联系人性别:</strong>
+  <%= @peo.contactsex %>
+</p>
+
+<p>
+  <strong>联系人电话:</strong>
+  <%= @peo.contacttel %>
+</p>
+
+<p>
+  <strong>营业执照:</strong>
+  <%= @peo.businesslicense %>
+</p>
+
+<p>
+  <strong>QR码:</strong>
+  <%= @peo.qrcode %>
+</p>
+
+<p>
+  <strong>单据:</strong>
+  <%= @peo.upid %>
+</p>
+
+<p>
+  <strong>状态:</strong>
+  <%= @peo.status %>
+</p>
+
+<p>
+  <strong>微信:</strong>
+  <%= @peo.wechat %>
+</p>
+
+<%= link_to '编辑会员', edit_peo_path(@peo) %> |
+<%= link_to '返回', peos_path %>
+

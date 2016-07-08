@@ -1,4 +1,5 @@
 class CreditsController < ApplicationController
+  layout 'admin'
   before_action :set_credit, only: [:show, :edit, :update, :destroy]
 
   # GET /credits
@@ -28,7 +29,7 @@ class CreditsController < ApplicationController
 
     respond_to do |format|
       if @credit.save
-        format.html { redirect_to @credit, notice: 'Credit was successfully created.' }
+        format.html { redirect_to @credit, notice: '征集者新建成功.' }
         format.json { render :show, status: :created, location: @credit }
       else
         format.html { render :new }
@@ -42,7 +43,7 @@ class CreditsController < ApplicationController
   def update
     respond_to do |format|
       if @credit.update(credit_params)
-        format.html { redirect_to @credit, notice: 'Credit was successfully updated.' }
+        format.html { redirect_to @credit, notice: '征集者修改成功.' }
         format.json { render :show, status: :ok, location: @credit }
       else
         format.html { render :edit }
@@ -56,7 +57,7 @@ class CreditsController < ApplicationController
   def destroy
     @credit.destroy
     respond_to do |format|
-      format.html { redirect_to credits_url, notice: 'Credit was successfully destroyed.' }
+      format.html { redirect_to credits_url, notice: '删除征集者成功.' }
       format.json { head :no_content }
     end
   end

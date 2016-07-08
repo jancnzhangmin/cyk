@@ -1,25 +1,28 @@
-<%= form_for(@memberlevel) do |f| %>
-  <% if @memberlevel.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@memberlevel.errors.count, "error") %> prohibited this memberlevel from being saved:</h2>
 
-      <ul>
-      <% @memberlevel.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<div class="ibox-content form-horizontal m-t">
+
+
+  <div class="form-group">
+    <%= form_for(@memberlevel,:html => {:class=>'form-horizontal m-t',:multipart => true}) do |f| %>
+
+        <div class="form-group">
+          <label class="col-sm-3 control-label">会员名：</label>
+          <div class="col-sm-6">
+            <%= f.text_field :name,class:"form-control" %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-3 control-label">会员等级：</label>
+          <div class="col-sm-6">
+            <%= f.text_field :quota,class:"form-control" %>
+          </div>
+        </div>
+
+        <div class="actions">
+          <%= f.submit '确定',class: "btn btn-w-m btn-success mylink pull-right",'data-no-turbolink'=>true %>
+
+    <% end %>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
   </div>
-  <div class="field">
-    <%= f.label :quota %><br>
-    <%= f.text_field :quota %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>

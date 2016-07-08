@@ -1,14 +1,16 @@
+<%= render 'left' %>
+<%= render 'top' %>
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Amount:</strong>
+  <strong>征信数量:</strong>
   <%= @creditdetail.amount %>
 </p>
 
 <p>
-  <strong>Amountdate:</strong>
+  <strong>征信日期:</strong>
   <%= @creditdetail.amountdate %>
 </p>
 
-<%= link_to 'Edit', edit_creditdetail_path(@creditdetail) %> |
-<%= link_to 'Back', creditdetails_path %>
+<%= link_to '编辑征信', edit_creditdetail_path(@creditdetail) %> |
+<%= link_to '返回', creditdetails_path %>
