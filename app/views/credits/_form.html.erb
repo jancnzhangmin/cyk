@@ -1,41 +1,58 @@
-<%= form_for(@credit) do |f| %>
-  <% if @credit.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@credit.errors.count, "error") %> prohibited this credit from being saved:</h2>
+<div class="ibox-content form-horizontal m-t">
 
-      <ul>
-      <% @credit.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+
+  <div class="form-group">
+    <%= form_for(@credit,:html => {:class=>'form-horizontal m-t',:multipart => true}) do |f| %>
+
+        <div class="form-group">
+          <label class="col-sm-3 control-label">姓名：</label>
+          <div class="col-sm-6">
+            <%= f.text_field :name,class:"form-control" %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-3 control-label">性别：</label>
+          <div class="col-sm-6">
+            <%= f.text_field :sex,class:"form-control" %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-3 control-label">年龄：</label>
+          <div class="col-sm-6">
+            <%= f.text_field :age,class:"form-control" %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-3 control-label">征信位置：</label>
+          <div class="col-sm-6">
+            <%= f.text_field :placeoforigin,class:"form-control" %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-3 control-label">笔名：</label>
+          <div class="col-sm-6">
+            <%= f.text_field :upname,class:"form-control" %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-3 control-label">电话：</label>
+          <div class="col-sm-6">
+            <%= f.text_field :tel,class:"form-control" %>
+          </div>
+        </div>
+        <div class="actions">
+          <%= f.submit '确定',class: "btn btn-w-m btn-success mylink pull-right",'data-no-turbolink'=>true %>
+
+    <% end %>
     </div>
-  <% end %>
+  </div>
+</div>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :sex %><br>
-    <%= f.number_field :sex %>
-  </div>
-  <div class="field">
-    <%= f.label :age %><br>
-    <%= f.number_field :age %>
-  </div>
-  <div class="field">
-    <%= f.label :placeoforigin %><br>
-    <%= f.text_field :placeoforigin %>
-  </div>
-  <div class="field">
-    <%= f.label :upname %><br>
-    <%= f.text_field :upname %>
-  </div>
-  <div class="field">
-    <%= f.label :tel %><br>
-    <%= f.text_field :tel %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+
+
+

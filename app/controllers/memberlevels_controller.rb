@@ -1,4 +1,5 @@
 class MemberlevelsController < ApplicationController
+  layout 'admin'
   before_action :set_memberlevel, only: [:show, :edit, :update, :destroy]
 
   # GET /memberlevels
@@ -28,7 +29,7 @@ class MemberlevelsController < ApplicationController
 
     respond_to do |format|
       if @memberlevel.save
-        format.html { redirect_to @memberlevel, notice: 'Memberlevel was successfully created.' }
+        format.html { redirect_to @memberlevel, notice: '会员等级创建成功.' }
         format.json { render :show, status: :created, location: @memberlevel }
       else
         format.html { render :new }
@@ -42,7 +43,7 @@ class MemberlevelsController < ApplicationController
   def update
     respond_to do |format|
       if @memberlevel.update(memberlevel_params)
-        format.html { redirect_to @memberlevel, notice: 'Memberlevel was successfully updated.' }
+        format.html { redirect_to @memberlevel, notice: '会员等级编辑成功.' }
         format.json { render :show, status: :ok, location: @memberlevel }
       else
         format.html { render :edit }
@@ -56,7 +57,7 @@ class MemberlevelsController < ApplicationController
   def destroy
     @memberlevel.destroy
     respond_to do |format|
-      format.html { redirect_to memberlevels_url, notice: 'Memberlevel was successfully destroyed.' }
+      format.html { redirect_to memberlevels_url, notice: '删除成功' }
       format.json { head :no_content }
     end
   end

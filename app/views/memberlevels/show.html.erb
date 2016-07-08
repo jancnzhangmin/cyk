@@ -1,14 +1,16 @@
+<%= render 'left' %>
+<%= render 'top' %>
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>会员名:</strong>
   <%= @memberlevel.name %>
 </p>
 
 <p>
-  <strong>Quota:</strong>
+  <strong>会员等级:</strong>
   <%= @memberlevel.quota %>
 </p>
 
-<%= link_to 'Edit', edit_memberlevel_path(@memberlevel) %> |
-<%= link_to 'Back', memberlevels_path %>
+<%= link_to '编辑', edit_memberlevel_path(@memberlevel) %> |
+<%= link_to '返回', memberlevels_path %>
