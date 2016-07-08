@@ -9,7 +9,18 @@
 
             data: data ,
 
-            success: success ,
+            success:  function(data)
+        {
+
+
+            $('ul').empty();
+
+
+            $.each(data, function (i, item) {
+
+            });
+        }
+        ,
 
             dataType: dataType
 
@@ -20,7 +31,7 @@
 <input type="hidden" id="accesstoken" value=<%= @response["access_token"] %> >
 <input type="hidden" id="openid" value=<%= @response["openid"] %> >
 
-<%= JSON.parse(URI.parse(url).read)["openid"] %>
+
 
 
 
