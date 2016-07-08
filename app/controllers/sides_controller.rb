@@ -17,12 +17,9 @@ class SidesController < ApplicationController
         if @response
           accesstoken = @response["access_token"]
           openid = @response["openid"]
-          @getuser = nil
           begin
             open('https://api.weixin.qq.com/sns/userinfo?access_token='+accesstoken+'&openid='+openid+'&lang=zh_CN')
-            if @getuser
               @userinfo=http.read
-            end
           end
         end
       end
