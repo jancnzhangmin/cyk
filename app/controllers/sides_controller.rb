@@ -10,11 +10,14 @@ class SidesController < ApplicationController
   def getcode
     @code = params[:code]
     @response =nil
+    @accesstoken
     begin
       open('https://api.weixin.qq.com/sns/oauth2/access_token?appid=wx685f96097b4c5877&secret=89a4867cc23380cc5c6197d809f87ffe&code='+@code+'&grant_type=authorization_code') do |http|
       @response=http.read
+        @response.each do |f|
+          @accesstoken=f.access_token
+        end
       end
-
     end
 
 
