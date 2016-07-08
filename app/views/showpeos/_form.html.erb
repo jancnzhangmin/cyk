@@ -1,0 +1,77 @@
+<%= form_for(@peo) do |f| %>
+  <% if @peo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@peo.errors.count, "error") %> prohibited this peo from being saved:</h2>
+
+      <ul>
+      <% @peo.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :memberlevel_id %><br>
+    <%= f.number_field :memberlevel_id %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :credit %><br>
+    <%= f.text_field :credit %>
+  </div>
+  <div class="field">
+    <%= f.label :sex %><br>
+    <%= f.number_field :sex %>
+  </div>
+  <div class="field">
+    <%= f.label :tel %><br>
+    <%= f.text_field :tel %>
+  </div>
+  <div class="field">
+    <%= f.label :bankcard %><br>
+    <%= f.text_field :bankcard %>
+  </div>
+  <div class="field">
+    <%= f.label :bankaccount %><br>
+    <%= f.text_field :bankaccount %>
+  </div>
+  <div class="field">
+    <%= f.label :contact %><br>
+    <%= f.text_field :contact %>
+  </div>
+  <div class="field">
+    <%= f.label :contactsex %><br>
+    <%= f.number_field :contactsex %>
+  </div>
+  <div class="field">
+    <%= f.label :contacttel %><br>
+    <%= f.text_field :contacttel %>
+  </div>
+  <div class="field">
+    <%= f.label :businesslicense %><br>
+    <%= f.text_field :businesslicense %>
+  </div>
+  <div class="field">
+    <%= f.label :qrcode %><br>
+    <%= f.text_field :qrcode %>
+  </div>
+  <div class="field">
+    <%= f.label :upid %><br>
+    <%= f.number_field :upid %>
+  </div>
+  <div class="field">
+    <%= f.label :status %><br>
+    <%= f.number_field :status %>
+  </div>
+  <div class="field">
+    <%= f.label :wechat %><br>
+    <%= f.text_field :wechat %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

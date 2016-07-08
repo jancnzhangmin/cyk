@@ -1,5 +1,4 @@
 source 'https://gems.ruby-china.org'
-
 gem "font-awesome-rails"
 gem 'paperclip'
 gem 'rails_kindeditor', github: 'Macrow/rails_kindeditor'

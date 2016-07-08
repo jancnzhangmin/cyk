@@ -70,6 +70,6 @@ class PeosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def peo_params
-      params.require(:peo).permit(:memberlevel_id, :name, :credit, :sex, :tel, :bankcard, :bankaccount, :contact, :contactsex, :contacttel, :businesslicense, :qrcode, :upid, :status, :wechat)
+      params.require(:peo).permit(:memberlevel_id, :name, :credit, :sex, :tel, :bankcard, :bankaccount, :contact, :contactsex, :contacttel, :businesslicense, :qrcode, :upid, :status, :wechat, :identityfont, :identityback, :bankphoto, :businessphoto, :prospectus, :workprove)
     end
 end
