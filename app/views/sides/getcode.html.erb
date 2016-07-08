@@ -1,15 +1,26 @@
 <script>
     $(document).ready(function(){
         //window.open(http://open.weixin.qq.com/connect/oauth2/authorize?appid='.$APPID.'&redirect_uri='.urlencode($REDIRECT_URI).'&response_type=code&scope='.$scope.'&state='.$state.'#wechat_redirect)
+        $.ajax({
 
+            type: 'get',
+
+            url: 'https://api.weixin.qq.com/sns/userinfo?access_token='+$('#accesstoken').val()+'&openid='+$('#openid').val()+'&lang=zh_CN' ,
+
+            data: data ,
+
+            success: success ,
+
+            dataType: dataType
+
+        });
     });
 </script>
 
-<input type="hidden" id="accesstoken" >
+<input type="hidden" id="accesstoken" value=<%= @response["access_token"] %> >
+<input type="hidden" id="openid" value=<%= @response["openid"] %> >
 
 <%= @response %>
 
-<% if @userinfo %>
-<%= @userinfo %>
-<% end %>
+
 
