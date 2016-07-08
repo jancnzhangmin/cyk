@@ -527,7 +527,6 @@ $('#idindex').val(item.id);
 myApp.onPageInit('showcontent',function(page){
 
 
-src="http://v3.jiathis.com/code/jia.js";
 
 
 // Add view

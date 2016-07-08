@@ -1,77 +1,293 @@
-<%= form_for(@peo) do |f| %>
-  <% if @peo.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@peo.errors.count, "error") %> prohibited this peo from being saved:</h2>
+<div class="pages">
+  <div class="page" data-page="home-another">
+    <div class="page-content">
+      <div class="content-block-title">页面标题</div>
+      <div class="list-block">
+        <ul>
+          <!-- Text inputs -->
+          <%= form_for(@peo) do |f| %>
+              <li>
+                <div class="item-content">
 
-      <ul>
-      <% @peo.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+                  <div class="item-inner">
+                    <div class="item-title label">会员等级</div>
+                    <div class="item-input">
+                      <%= f.number_field :memberlevel_id,placeholder:"Memberlevel" %>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li>
+                <div class="item-content">
+
+                  <div class="item-inner">
+                    <div class="item-title label">姓名</div>
+                    <div class="item-input">
+                      <%= f.text_field :name,placeholder:"Your name" %>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li>
+                <div class="item-content">
+
+                  <div class="item-inner">
+                    <div class="item-title label">信用额度</div>
+                    <div class="item-input">
+                      <%= f.text_field :credit,placeholder:"Credit" %>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li>
+                <div class="item-content">
+
+                  <div class="item-inner">
+                    <div class="item-title label">性别</div>
+                    <div class="item-input">
+                      <%= f.number_field :sex,placeholder:"Sex" %>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li>
+                <div class="item-content">
+
+                  <div class="item-inner">
+                    <div class="item-title label">电话</div>
+                    <div class="item-input">
+                      <%= f.text_field :tel,placeholder:"Tel" %>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li>
+                <div class="item-content">
+
+                  <div class="item-inner">
+                    <div class="item-title label">银行卡</div>
+                    <div class="item-input">
+                      <%= f.text_field :bankcard,placeholder:"Bankcard" %>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="item-content">
+
+                  <div class="item-inner">
+                    <div class="item-title label">银行账户</div>
+                    <div class="item-input">
+                      <%= f.text_field :bankaccount,placeholder:"Bankaccount" %>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+
+              <li>
+                <div class="item-content">
+
+                  <div class="item-inner">
+                    <div class="item-title label">紧急联系人</div>
+                    <div class="item-input">
+                      <input type="text" placeholder="Contact">
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li>
+                <div class="item-content">
+
+                  <div class="item-inner">
+                    <div class="item-title label">紧急联系人性别</div>
+                    <div class="item-input">
+
+                      <%= f.text_field :contact,placeholder:"Contactsex" %>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li>
+                <div class="item-content">
+
+                  <div class="item-inner">
+                    <div class="item-title label">紧急联系人电话</div>
+                    <div class="item-input">
+
+                      <%= f.text_field :contacttel,placeholder:"Contacttel" %>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+
+
+              <li>
+                <div class="item-content">
+
+                  <div class="item-inner">
+                    <div class="item-title label">营业执照</div>
+                    <div class="item-input">
+                      <%= f.text_field :businesslicense,placeholder:"Businesslicense" %>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+
+
+              <li>
+                <div class="item-content">
+
+                  <div class="item-inner">
+                    <div class="item-title label">QR码</div>
+                    <div class="item-input">
+                      <%= f.text_field :qrcode,placeholder:"Qrcode" %>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+
+
+              <li>
+                <div class="item-content">
+
+                  <div class="item-inner">
+                    <div class="item-title label">单</div>
+                    <div class="item-input">
+                      <%= f.number_field :upid,placeholder:"Upid" %>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+
+
+              <li>
+                <div class="item-content">
+
+                  <div class="item-inner">
+                    <div class="item-title label">状态</div>
+                    <div class="item-input">
+                      <%= f.number_field :status,placeholder:"Status" %>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+
+
+              <li>
+                <div class="item-content">
+
+                  <div class="item-inner">
+                    <div class="item-title label">微信</div>
+                    <div class="item-input">
+                      <%= f.text_field :wechat,placeholder:"Wechat" %>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li>
+                <div class="item-content">
+
+                  <div class="item-inner">
+                    <div class="item-title label">身份证正面</div>
+                    <div class="item-input">
+                      <%= f.file_field :identityfont,placeholder:"Identityfont" %>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+
+              <li>
+                <div class="item-content">
+
+                  <div class="item-inner">
+                    <div class="item-title label">身份证反面</div>
+                    <div class="item-input">
+                      <%= f.file_field :identityback,placeholder:"Identityback" %>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+
+              <li>
+                <div class="item-content">
+
+                  <div class="item-inner">
+                    <div class="item-title label">银行卡照片</div>
+                    <div class="item-input">
+                      <%= f.file_field :bankphoto,placeholder:"Bankphoto" %>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+
+              <li>
+                <div class="item-content">
+
+                  <div class="item-inner">
+                    <div class="item-title label">营业执照</div>
+                    <div class="item-input">
+                      <%= f.file_field :businessphoto,placeholder:"Businessphoto" %>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+
+              <li>
+                <div class="item-content">
+
+                  <div class="item-inner">
+                    <div class="item-title label">商业计划书</div>
+                    <div class="item-input">
+                      <%= f.file_field :prospectus,placeholder:"Prospectus" %>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+
+              <li>
+                <div class="item-content">
+
+                  <div class="item-inner">
+                    <div class="item-title label">工作证明</div>
+                    <div class="item-input">
+                      <%= f.file_field :workprove,placeholder:"Workprove" %>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+
+
+
+              <br>
+              <li>
+                <div class="container">
+                  <%= f.submit'提交',class:"button button-round button-fill" %>
+                </div>
+              </li>
+          <% end %>
+
+        </ul>
+      </div>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :memberlevel_id %><br>
-    <%= f.number_field :memberlevel_id %>
   </div>
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :credit %><br>
-    <%= f.text_field :credit %>
-  </div>
-  <div class="field">
-    <%= f.label :sex %><br>
-    <%= f.number_field :sex %>
-  </div>
-  <div class="field">
-    <%= f.label :tel %><br>
-    <%= f.text_field :tel %>
-  </div>
-  <div class="field">
-    <%= f.label :bankcard %><br>
-    <%= f.text_field :bankcard %>
-  </div>
-  <div class="field">
-    <%= f.label :bankaccount %><br>
-    <%= f.text_field :bankaccount %>
-  </div>
-  <div class="field">
-    <%= f.label :contact %><br>
-    <%= f.text_field :contact %>
-  </div>
-  <div class="field">
-    <%= f.label :contactsex %><br>
-    <%= f.number_field :contactsex %>
-  </div>
-  <div class="field">
-    <%= f.label :contacttel %><br>
-    <%= f.text_field :contacttel %>
-  </div>
-  <div class="field">
-    <%= f.label :businesslicense %><br>
-    <%= f.text_field :businesslicense %>
-  </div>
-  <div class="field">
-    <%= f.label :qrcode %><br>
-    <%= f.text_field :qrcode %>
-  </div>
-  <div class="field">
-    <%= f.label :upid %><br>
-    <%= f.number_field :upid %>
-  </div>
-  <div class="field">
-    <%= f.label :status %><br>
-    <%= f.number_field :status %>
-  </div>
-  <div class="field">
-    <%= f.label :wechat %><br>
-    <%= f.text_field :wechat %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>
