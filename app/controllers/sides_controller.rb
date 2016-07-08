@@ -20,7 +20,9 @@ class SidesController < ApplicationController
 
     if @response
       accesstoken = @response["access_token"]
+      accesstoken = JSON.parse(@response[:accesstoken])
       openid = @response["openid"]
+      openid = JSON.parse(@response[:openid])
       begin
         open('https://api.weixin.qq.com/sns/userinfo?access_token='+accesstoken+'&openid='+openid+'&lang=zh_CN') do |http|
           @userinfo=http.read
