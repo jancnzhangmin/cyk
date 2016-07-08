@@ -1,35 +1,39 @@
 <script>
     $(document).ready(function(){
         //window.open(http://open.weixin.qq.com/connect/oauth2/authorize?appid='.$APPID.'&redirect_uri='.urlencode($REDIRECT_URI).'&response_type=code&scope='.$scope.'&state='.$state.'#wechat_redirect)
-        $.ajax({
-
-            type: 'get',
-
-            url: 'https://api.weixin.qq.com/sns/userinfo?access_token='+$('#accesstoken').val()+'&openid='+$('#openid').val()+'&lang=zh_CN' ,
-
-            data: data ,
-
-            success:  function(data)
-        {
-
-
-            $('ul').empty();
-
-
-            $.each(data, function (i, item) {
-
-            });
-        }
-        ,
-
-            dataType: dataType
-
-        });
-    });
+//        $.ajax({
+//
+//            type: 'get',
+//
+//            url: 'https://api.weixin.qq.com/sns/userinfo?access_token='+$('#accesstoken').val()+'&openid='+$('#openid').val()+'&lang=zh_CN' ,
+//
+//            data: data ,
+//
+//            success:  function(data)
+//        {
+//
+//
+//            $('ul').empty();
+//
+//
+//            $.each(data, function (i, item) {
+//
+//            });
+//        }
+//        ,
+//
+//            dataType: dataType
+//
+//        });
+//    });
 </script>
 
 <input type="hidden" id="accesstoken" value=<%= @response["access_token"] %> >
 <input type="hidden" id="openid" value=<%= @response["openid"] %> >
+
+<% if @userinfo %>
+<%= @userinfo %>
+<% end %>
 
 
 
