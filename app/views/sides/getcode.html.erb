@@ -8,5 +8,8 @@
 <input type="hidden" id="accesstoken" >
 
 <%= @response %>
-<br>
-<%= @response %>
+
+<% if @userinfo %>
+<%= @userinfo %>
+<% end %>
+
