@@ -1,3 +1,4 @@
+#encoding: utf-8
 class SidesController < ApplicationController
 
   require "open-uri"
@@ -18,17 +19,17 @@ class SidesController < ApplicationController
       end
     end
 
-    if @response
-      accesstoken = @response[0]
-      #accesstoken = JSON.parse(@response[:accesstoken])
-      openid = @response[1]
-      #openid = JSON.parse(@response[:openid])
-      begin
-        open('https://api.weixin.qq.com/sns/userinfo?access_token='+accesstoken+'&openid='+openid+'&lang=zh_CN') do |http|
-          @userinfo=http.read
-        end
-      end
-    end
+    # if @response
+    #   accesstoken = @response['access_token']
+    #   #accesstoken = JSON.parse(@response[:accesstoken])
+    #   openid = @response['openid']
+    #   #openid = JSON.parse(@response[:openid])
+    #   begin
+    #     open('https://api.weixin.qq.com/sns/userinfo?access_token='+accesstoken+'&openid='+openid+'&lang=zh_CN') do |http|
+    #       @userinfo=http.read
+    #     end
+    #   end
+    # end
 
 
     #redirect_to 'https://api.weixin.qq.com/sns/oauth2/access_token?appid=wx685f96097b4c5877&secret=89a4867cc23380cc5c6197d809f87ffe&code='+@code+'&grant_type=authorization_code'

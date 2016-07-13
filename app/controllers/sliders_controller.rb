@@ -1,4 +1,5 @@
 class SlidersController < ApplicationController
+  layout 'admin'
   before_action :set_slider, only: [:show, :edit, :update, :destroy]
 
   # GET /sliders
@@ -28,7 +29,7 @@ class SlidersController < ApplicationController
 
     respond_to do |format|
       if @slider.save
-        format.html { redirect_to @slider, notice: 'Slider was successfully created.' }
+        format.html { redirect_to @slider, notice: '创建成功.' }
         format.json { render :show, status: :created, location: @slider }
       else
         format.html { render :new }
@@ -42,7 +43,7 @@ class SlidersController < ApplicationController
   def update
     respond_to do |format|
       if @slider.update(slider_params)
-        format.html { redirect_to @slider, notice: 'Slider was successfully updated.' }
+        format.html { redirect_to @slider, notice: '编辑成功.' }
         format.json { render :show, status: :ok, location: @slider }
       else
         format.html { render :edit }
@@ -56,7 +57,7 @@ class SlidersController < ApplicationController
   def destroy
     @slider.destroy
     respond_to do |format|
-      format.html { redirect_to sliders_url, notice: 'Slider was successfully destroyed.' }
+      format.html { redirect_to sliders_url, notice: '删除成功.' }
       format.json { head :no_content }
     end
   end
@@ -69,6 +70,6 @@ class SlidersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def slider_params
-      params.require(:slider).permit(:link, :showstartdate, :showenddate)
+      params.require(:slider).permit(:link, :showstartdate, :showenddate, :slider)
     end
 end
