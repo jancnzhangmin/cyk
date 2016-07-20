@@ -29,7 +29,7 @@ class PeosController < ApplicationController
 
     respond_to do |format|
       if @peo.save
-        format.html { redirect_to @peo, notice: '成功创建会员.' }
+        format.html { redirect_to peos_path, notice: '成功创建会员.' }
         format.json { render :show, status: :created, location: @peo }
       else
         format.html { render :new }

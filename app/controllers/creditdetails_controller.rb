@@ -29,7 +29,7 @@ class CreditdetailsController < ApplicationController
 
     respond_to do |format|
       if @creditdetail.save
-        format.html { redirect_to @creditdetail, notice: '征集创建成功.' }
+        format.html { redirect_to creditdetails_path, notice: '征集创建成功.' }
         format.json { render :show, status: :created, location: @creditdetail }
       else
         format.html { render :new }
