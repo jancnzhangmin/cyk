@@ -43,7 +43,7 @@ class CreditdetailsController < ApplicationController
   def update
     respond_to do |format|
       if @creditdetail.update(creditdetail_params)
-        format.html { redirect_to @creditdetail, notice: '征集修改成功.' }
+        format.html { redirect_to creditdetails_path, notice: '征集修改成功.' }
         format.json { render :show, status: :ok, location: @creditdetail }
       else
         format.html { render :edit }

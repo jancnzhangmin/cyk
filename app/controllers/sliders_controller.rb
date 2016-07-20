@@ -43,7 +43,7 @@ class SlidersController < ApplicationController
   def update
     respond_to do |format|
       if @slider.update(slider_params)
-        format.html { redirect_to @slider, notice: '编辑成功.' }
+        format.html { redirect_to sliders_path, notice: '编辑成功.' }
         format.json { render :show, status: :ok, location: @slider }
       else
         format.html { render :edit }

@@ -43,7 +43,7 @@ class MemberlevelsController < ApplicationController
   def update
     respond_to do |format|
       if @memberlevel.update(memberlevel_params)
-        format.html { redirect_to @memberlevel, notice: '会员等级编辑成功.' }
+        format.html { redirect_to memberlevels_path, notice: '会员等级编辑成功.' }
         format.json { render :show, status: :ok, location: @memberlevel }
       else
         format.html { render :edit }

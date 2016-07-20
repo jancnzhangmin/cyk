@@ -43,7 +43,7 @@ class PeosController < ApplicationController
   def update
     respond_to do |format|
       if @peo.update(peo_params)
-        format.html { redirect_to @peo, notice: '会员修改成功.' }
+        format.html { redirect_to peos_path, notice: '会员修改成功.' }
         format.json { render :show, status: :ok, location: @peo }
       else
         format.html { render :edit }
